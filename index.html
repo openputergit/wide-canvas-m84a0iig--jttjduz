@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accurate Car Care - Professional Auto Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs" defer></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            transition: all 0.3s ease;
+        }
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1599256621730-535171e28e50?q=80&w=1771&auto=format&fit=crop') center/cover;
+        }
+    </style>
+</head>
+<body x-data="app()">
+
+    <!-- Navigation -->
+    <nav class="bg-[#003057] text-white p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="bi bi-tools text-3xl"></i>
+                <span class="text-xl font-bold">Accurate Car Care</span>
+            </div>
+            <div class="hidden md:flex space-x-6">
+                <a href="#services" class="hover:text-blue-200">Services</a>
+                <a href="#features" class="hover:text-blue-200">Features</a>
+                <a href="#how-it-works" class="hover:text-blue-200">How It Works</a>
+                <a href="#book" class="hover:text-blue-200">Book Now</a>
+                <a href="tel:9845552372" class="hover:text-blue-200">Call Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section text-white py-20">
+        <div class="container mx-auto text-center px-4">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">Professional Car Care Services</h1>
+            <p class="text-xl mb-8">Expert Technicians. Quality Service. Customer Satisfaction.</p>
+            <a href="#book" class="bg-[#0072bc] text-white px-8 py-3 rounded-full hover:bg-blue-700 transition">Book Now</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Our Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="service-card bg-white rounded-lg shadow-lg p-6 text-center" @click="alert('Details about Denting & Painting service')">
+                    <i class="bi bi-car-front text-5xl text-[#0072bc] mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Denting & Painting</h3>
+                    <p class="text-gray-600">Complete body work and paint service with premium quality materials</p>
+                </div>
+                <div class="service-card bg-white rounded-lg shadow-lg p-6 text-center" @click="alert('Details about Mechanical Repairs service')">
+                    <i class="bi bi-tools text-5xl text-[#0072bc] mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Mechanical Repairs</h3>
+                    <p class="text-gray-600">Expert diagnosis and repair of all mechanical issues</p>
+                </div>
+                <div class="service-card bg-white rounded-lg shadow-lg p-6 text-center" @click="alert('Details about Electrical Service')">
+                    <i class="bi bi-lightning-charge text-5xl text-[#0072bc] mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Electrical Service</h3>
+                    <p class="text-gray-600">Complete electrical system diagnostics and repairs</p>
+                </div>
+                <div class="service-card bg-white rounded-lg shadow-lg p-6 text-center" @click="alert('Details about Detailing')">
+                    <i class="bi bi-droplet text-5xl text-[#0072bc] mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Detailing</h3>
+                    <p class="text-gray-600">Premium car detailing and deep cleaning services</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Why Choose Us</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <i class="bi bi-award text-4xl text-[#0072bc] mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Certified Technicians</h3>
+                    <p class="text-gray-600">Our team consists of certified professionals with years of experience</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <i class="bi bi-clock text-4xl text-[#0072bc] mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Quick Service</h3>
+                    <p class="text-gray-600">Fast turnaround time without compromising on quality</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <i class="bi bi-shield-check text-4xl text-[#0072bc] mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Warranty</h3>
+                    <p class="text-gray-600">All our services come with warranty coverage</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">How It Works</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="bg-[#0072bc] rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <i class="bi bi-calendar-check text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Book Online</h3>
+                    <p class="text-gray-600">Schedule your service online easily</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-[#0072bc] rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <i class="bi bi-car-front text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Free Pickup</h3>
+                    <p class="text-gray-600">We'll collect your car from your location</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-[#0072bc] rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <i class="bi bi-tools text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Service</h3>
+                    <p class="text-gray-600">Expert service with regular updates</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-[#0072bc] rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <i class="bi bi-check-circle text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Delivery</h3>
+                    <p class="text-gray-600">Doorstep delivery of your serviced car</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Form -->
+    <section id="book" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4 max-w-md">
+            <h2 class="text-3xl font-bold text-center mb-8">Book a Service</h2>
+            <form id="bookingForm" @submit.prevent="submitBooking" class="space-y-4">
+                <div>
+                    <label class="block text-gray-700 mb-2">Full Name*</label>
+                    <input type="text" name="fullName" required x-model="booking.fullName" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500">
+                </div>
+                <div>
+                    <label class="block text-gray-700 mb-2">Phone Number*</label>
+                    <input type="tel" name="phone" required x-model="booking.phone" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500">
+                </div>
+                <div>
+                    <label class="block text-gray-700 mb-2">Email*</label>
+                    <input type="email" name="email" required x-model="booking.email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500">
+                </div>
+                <div>
+                    <label class="block text-gray-700 mb-2">Preferred Date & Time*</label>
+                    <input type="text" id="datetime" name="datetime" required x-model="booking.datetime" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500">
+                </div>
+                <div>
+                    <label class="block text-gray-700 mb-2">Service Type*</label>
+                    <select name="serviceType" required x-model="booking.serviceType" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500">
+                        <option value="">Select a service</option>
+                        <option value="denting-painting">Denting & Painting</option>
+                        <option value="mechanical">Mechanical Repairs</option>
+                        <option value="electrical">Electrical Service</option>
+                        <option value="detailing">Detailing</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-gray-700 mb-2">Additional Notes</label>
+                    <textarea name="notes" rows="3" x-model="booking.notes" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-[#0072bc] text-white py-3 rounded-lg hover:bg-blue-700 transition">
+                    Submit Booking
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="bg-[#003057] text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p class="mb-4">© 2024 Accurate Car Care. All rights reserved.</p>
+            <p>Email: <a href="mailto:mujjukaif@gmail.com" class="underline">mujjukaif@gmail.com</a></p>
+            <p>Phone: <a href="tel:9845552372" class="underline">9845552372</a></p>
+            <div class="flex justify-center space-x-4">
+                <a href="#" class="hover:text-blue-200"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="hover:text-blue-200"><i class="bi bi-instagram"></i></a>
+                <a href="#" class="hover:text-blue-200"><i class="bi bi-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        flatpickr("#datetime", {
+            enableTime: true,
+            dateFormat: "Y-m-d H:i",
+            minDate: "today",
+            minuteIncrement: 30
+        });
+
+        function app() {
+            return {
+                booking: {
+                    fullName: '',
+                    phone: '9845552372',
+                    email: '',
+                    datetime: '',
+                    serviceType: '',
+                    notes: '',
+                },
+                async submitBooking() {
+                    const message = `New Booking:\nName: ${this.booking.fullName}\nPhone: ${this.booking.phone}\nEmail: ${this.booking.email}\nDate & Time: ${this.booking.datetime}\nService: ${this.booking.serviceType}\nNotes: ${this.booking.notes}`;
+                    window.open(`https://wa.me/9845552372?text=${encodeURIComponent(message)}`, '_blank');
+                    alert('Booking submitted successfully! We will contact you shortly.');
+                    this.booking = {
+                        fullName: '',
+                        phone: '9845552372',
+                        email: '',
+                        datetime: '',
+                        serviceType: '',
+                        notes: '',
+                    };
+                }
+            }
+        }
+    </script>
+
+    <script>
+        function adminLogin() {
+            const password = prompt("Enter admin password:");
+            if (password === "yourAdminPassword") {
+                alert("Logged in as admin. You can now edit the website.");
+                // Add functionality for editing the website here.
+            } else {
+                alert("Incorrect password.");
+            }
+        }
+    </script>
+<script>document.body.addEventListener('wheel', e => { if (!e.ctrlKey) return; e.preventDefault(); return }, { passive: false })</script>
+	</body>
+</html>
